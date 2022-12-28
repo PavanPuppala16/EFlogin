@@ -1,0 +1,104 @@
+﻿@using EFlogin.Models;
+@model UserModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<fieldset>
+    <legend>
+        User Registration
+    </legend>
+    @using(Html.BeginForm("Register", "Account",FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.FirstName)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.FirstName)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    
+                    @Html.ValidationMessageFor(Model => Model.FirstName, null, new { @class = "text text-danger" })
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.LastName)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.LastName)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(Model => Model.LastName, null, new { @class = "text text-danger" })
+
+                </td>
+<tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Email)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.Email)
+                </td>
+            </tr>
+<tr>
+    <td></td>
+    <td colspan="2">
+        @Html.ValidationMessageFor(Model => Model.Email, null, new { @class = "text text-danger" })
+
+    </td>
+<tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Password)
+                </td>
+                <td>
+                    @Html.PasswordFor(Model => Model.Password)
+                </td>
+            </tr>
+<tr>
+    <td></td>
+    <td colspan="2">
+        @Html.ValidationMessageFor(Model => Model.Password, null, new { @class = "text text-danger" })
+
+    </td>
+<tr>
+                <td>
+                    @Html.LabelFor(Model => Model.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.PasswordFor(Model => Model.ConfirmPassword)
+                </td>
+            </tr>
+
+                        <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Register"  />
+                            </td>
+                            <td>
+                                <input type="reset" value="reset" />
+                            </td>
+                        </tr>
+
+                    </table>
+                </td>
+            </tr>
+            @*<tr>
+                <td colspan="2">
+                    @Html.LabelFor(Model => Model.SuccessMessage, null, new {@class="alert alert-sucess"})
+                </td>
+            </tr>*@
+        </table>
+    }
+</fieldset>
+
